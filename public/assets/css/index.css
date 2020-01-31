@@ -1,0 +1,141 @@
+@font-face {
+    font-family: berlin;
+    src: url("../font/BerlinRegular.TTF");
+}
+
+/* Navbar */
+#index-navbar {
+    position: fixed;
+    width: 90%;
+    padding: 15px 5%;
+    background-color: #fff;
+    transition: none;
+}
+
+#logo a {
+    font-family: berlin;
+    color: #00edaa;
+    font-size: 20px !important;
+}
+
+#nav-tool .profile {
+    width: 35px;
+    border-radius: 50%;
+}
+
+#nav-tool .i-search {
+    height: 25px;
+}
+
+/* thing list */
+#type-thing a {
+    color: #757575;
+}
+
+.type-active {
+    padding: 8px 17px !important;
+    background: #c1ffed87;
+    color: #00edaa !important;
+    border-radius: 5px;
+}
+
+.product-container .product {
+    width: 25%;
+}
+
+.product-container .product-img {
+    width: 100%;
+    padding-top: 77%;
+    border-radius: 10px;
+}
+
+.product-list {
+    width: 70%;
+    height: 2em;
+}
+
+.product-list .product {
+
+}
+
+.product-list .product-info {
+    width: 80%;
+}
+
+.product-list .product-img {
+    width: 100px;
+    height: 100px;
+    border-radius: 10px;
+}
+
+.product-list .product-img-container {
+    width: 20%;
+}
+
+.title-content {
+    font-size: 20px;
+}
+
+@media screen and (max-width: 950px) {
+    .product-list .product-img-container {
+        width: 20%;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    /* sizing font */
+    a {
+        font-size: 13px !important;
+    }
+    #type-thing {
+        display: flex;
+        text-align: left;
+        min-width: 100%;
+        overflow-x: auto;
+        margin: 0 -5%;
+        padding-left: 5%;
+    }
+    #type-thing::-webkit-scrollbar, .product-container::-webkit-scrollbar {
+        width: 0;
+    }
+    .product-container {
+        overflow-x: auto;
+        margin: 0 -5.5%;
+        padding-left: 5%;
+    }
+    .product-container .product {
+        min-width: 14em;
+    }
+    .product-list {
+        width: 100%;
+    }
+    .product-list .product-img {
+        width: 100px;
+        height: 100px;
+        padding-top: 0;
+    }
+    #type-thing .d-i-block {
+        display: flex;
+        height: fit-content;
+    }
+    #type-thing .d-i-block a {
+        padding: 8px 17px !important;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .product-list .product-img {
+        width: 90px;
+        height: 90px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .product-list .product-img-container {
+        width: 30%;
+    }
+    .product-list .product-img {
+        width: 85px;
+        height: 85px;
+    }
+}
