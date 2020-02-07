@@ -7,6 +7,7 @@ a:-webkit-any-link {color: unset;}
 
 /* positioning */
 .m-0 {margin: 0;}
+.m-05 {margin: .25rem};
 .m-1 {margin: .5rem;}
 .m-2 {margin: 1rem;}
 .m-3 {margin: 1.5rem;}
@@ -44,6 +45,12 @@ a:-webkit-any-link {color: unset;}
 .p-4 {padding: 2rem;}
 .p-5 {padding: 3.5rem;}
 .p-6 {padding: 4.5rem;}
+.pl-1 {padding-left: .5rem;}
+.pl-2 {padding-left: 1rem;}
+.pl-3 {padding-left: 1.5rem;}
+.pl-4 {padding-left: 2rem;}
+.pl-5 {padding-left: 3.5rem;}
+.pl-6 {padding-left: 4.5rem;}
 
 .float-left {float: left;}
 .float-right {float: right;}
@@ -71,6 +78,7 @@ a {font-size: 15px;}
 
 /* color */
 .color-pale {color: rgba(0,0,0,.54);}
+.color-primary {color: #00edaa;}
 
 /* cursor */
 .c-pointer {cursor: pointer;}
