@@ -8,6 +8,7 @@
     <link rel="shortcut icon" href="assets/img/index/logo.png" type="image/x-icon">
     <link rel="stylesheet" href="assets/css/index.css">
     <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
     <script src="assets/js/index.js"></script>
     <script src="assets/js/jquery.min.js"></script>
 </head>
@@ -15,7 +16,7 @@
     <nav id="index-navbar">
         <div id="logo" class="d-i-flex align-i-center">
             <img src="assets/img/index/logo.png" alt="" width="30">
-            <a href="" class="ml-1">rumahlelang</a>
+            <a href="/" class="ml-1">rumahlelang</a>
         </div>
 
         <div id="nav-tool" class="d-flex float-right">

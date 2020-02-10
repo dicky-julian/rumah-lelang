@@ -3,7 +3,8 @@ body {margin: 0;}
 #app {padding: 80px 5%;}
 hr {margin-top: 1rem; margin-bottom: 1rem; border: 0; border-top: 1px solid rgba(0,0,0,.1);}
 a:-webkit-any-link {color: unset;}
-
+del {color: #fff;}
+.hr-attribute hr{width: 45%; margin: 1rem 0;}
 
 /* positioning */
 .m-0 {margin: 0;}
@@ -51,6 +52,14 @@ a:-webkit-any-link {color: unset;}
 .pl-4 {padding-left: 2rem;}
 .pl-5 {padding-left: 3.5rem;}
 .pl-6 {padding-left: 4.5rem;}
+.pb-05 {padding-bottom: .25rem;}
+.pb-1 {padding-bottom: .5rem;}
+.pb-2 {padding-bottom: 1rem;}
+.pb-3 {padding-bottom: 1.5rem;}
+.pb-4 {padding-bottom: 2rem;}
+.pb-5 {padding-bottom: 3.5rem;}
+.pb-6 {padding-bottom: 4.5rem;}
+
 
 .float-left {float: left;}
 .float-right {float: right;}
@@ -60,6 +69,13 @@ a:-webkit-any-link {color: unset;}
 
 .fullwidth {width: 100%;}
 
+.j-space-beetween {justify-content: space-between;}
+
+/* input */
+input:focus, button:focus {outline: 0;}
+.input {padding: 1em; border-radius: 5px; width: -webkit-fill-available;}
+.input-primary {border: 1px solid #00edaa; color: #00edaa;}
+
 /* text */
 a {text-decoration: none;}
 .text-center {text-align: center;}
@@ -67,16 +83,22 @@ a {text-decoration: none;}
 .text-bold {font-weight: 700;}
 .text-thin {font-weight: 100;}
 
+.font-neue {font-family: NeueEinstellungBold;}
+
 /* sizing text */
 a {font-size: 15px;}
 
 /* button */
 .bt {padding: 10px 15px; border-radius: 4px;}
+.bt-square {border-radius: 0; border-bottom-right-radius: 15px;}
 .bt-medium {padding: 13px 20px; border-radius: 4px; font-size: 14px;}
 .bt-primary {background: transparent; border: 1px solid #00edaa; color: #00edaa;}
 .bt-primary:hover {background: #00edaa; color: #fff;}
+.bt-primary-reverse {background: #00edaa; color: #fff; border: 1px solid #00edaa;}
+.bt-primary-reverse:hover {background: #00cf95; border-color: #00cf95;}
 
 /* color */
+.color-white {color: #fff !important;}
 .color-pale {color: rgba(0,0,0,.54);}
 .color-primary {color: #00edaa;}
 
@@ -90,3 +112,11 @@ a {font-size: 15px;}
 .d-i-block{display: inline-block;}
 .d-none{display: none;}
 .background-setup{background-size: cover !important; background-position: center !important; background-repeat: no-repeat !important;}
+
+/* width */
+.w-fit-content{width: fit-content;}
+.h-fit-content{height: fit-content;}
+
+/* tabs */
+.tabs .navigation .link{font-size: 15px;}
+.tabs .navigation .a{color: #00edaa; border-bottom: 2px solid #00edaa;}

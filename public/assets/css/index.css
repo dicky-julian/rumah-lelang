@@ -3,6 +3,11 @@
     src: url("../font/BerlinRegular.TTF");
 }
 
+@font-face {
+    font-family: NeueEinstellungBold;
+    src: url("../font/NeueEinstellungBold.ttf")
+}
+
 /* Navbar */
 #index-navbar {
     position: fixed;
@@ -55,21 +60,17 @@
     height: 2em;
 }
 
-.product-list .product {
-
-}
-
-.product-list .product-info {
+.product-info {
     width: 80%;
 }
 
-.product-list .product-img {
+.product-img-container .product-img {
     width: 100px;
     height: 100px;
     border-radius: 10px;
 }
 
-.product-list .product-img-container {
+.product-img-container {
     width: 20%;
 }
 
@@ -89,10 +90,6 @@
     top: 6em;
 }
 
-.find-by-kategori {
-
-}
-
 /* tag list style */
 
 .tag-list {
@@ -105,10 +102,10 @@
     display: -webkit-inline-box;
     display: -ms-inline-flexbox;
     display: inline-flex;
-    background: rgba(0,0,0,.05);
+    background: rgba(0, 0, 0, .05);
     padding: 3px 15px;
     border-radius: 5px;
-    border: 1px solid rgba(0,0,0,.05);
+    border: 1px solid rgba(0, 0, 0, .05);
     font-size: 11px !important;
     line-height: 22px;
     letter-spacing: 1px;
@@ -117,82 +114,104 @@
     transition: .2s;
 }
 
-/* responsive */
-
-@media screen and (max-width: 950px) {
-    .product-list .product-img-container {
-        width: 20%;
-    }
+/* Detail Product */
+#product-detail {
+    display: flex;
 }
 
-@media screen and (max-width: 800px) {
-    /* sizing font */
-    a {
-        font-size: 13px !important;
-    }
-    #type-thing {
-        display: flex;
-        text-align: left;
-        min-width: 100%;
-        overflow-x: auto;
-        margin: 0 -5%;
-        padding-left: 5%;
-    }
-    #type-thing::-webkit-scrollbar, .product-container::-webkit-scrollbar {
-        width: 0;
-    }
-    .product-container {
-        overflow-x: auto;
-        margin: 0 -5.5%;
-        padding-left: 5%;
-    }
-    .product-container .product {
-        min-width: 14em;
-    }
-    .product-list {
-        width: 100%;
-    }
-    .product-list .product-img {
-        width: 100px;
-        height: 100px;
-        padding-top: 0;
-    }
-    #type-thing .d-i-block {
-        display: flex;
-        height: fit-content;
-    }
-    #type-thing .d-i-block a {
-        padding: 8px 17px !important;
-    }
-    
-    /* add-new  */
-    .find-by-kategori {
-        padding-left: 0 !important;
-    }
-    .container-flex {
-        display: block !important;
-    }
-    .product-list {
-        display: inline-block;
-    }
-    #add-new {
-        width: 100%;
-    }
+#product-detail .product-img {
+    width: -webkit-fill-available;
+    position: sticky;
+    top: 5em;
 }
 
-@media screen and (max-width: 600px) {
-    .product-list .product-img {
-        width: 90px;
-        height: 90px;
-    }
+#product-detail .product-img img {
+    width: 100%;
+    max-height: 80vh;
+    border-radius: 10px;
 }
 
-@media screen and (max-width: 500px) {
-    .product-list .product-img-container {
-        width: 30%;
-    }
-    .product-list .product-img {
-        width: 85px;
-        height: 85px;
-    }
+#product-detail .detail-product {
+    width: 36em;
+    padding-left: 3em;
 }
+
+.show-price {
+    display: flex;
+    font-size: 13px;
+}
+
+.show-description {
+    color: gray;
+    line-height: 26px;
+}
+
+.product-img-list .img-list {
+    width: 32%;
+    height: 6em;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    border-radius: 5px;
+    transition: .2s;
+}
+
+.product-img-list .img-list:hover {
+    opacity: .5;
+}
+
+.product-img-list .active {
+    opacity: .5;
+}
+
+/* user profile */
+
+#profile-user {
+    background: #1edca9;
+    color: #fff;
+}
+#profile-user #profile-navbar {
+    padding: 15px 5% 0;
+}
+
+.profile-sidebar {
+    position: sticky;
+    top: 2em;
+    width: 15em;
+    padding: 0 2em;
+}
+
+.profile-sidebar img {
+    width: 125px;
+    height: 125px;
+    border-radius: 10px;
+}
+
+.profile-sidebar .bar-link .bt {
+    margin-top: 1em;
+    padding: 15px 0;
+    background: #43eebf87;
+    font-size: 14px;
+}
+
+.profile-sidebar .bar-link .bt:hover {
+    background: #86ffdd87;
+}
+
+.profile-sidebar .bar-link .active {
+    border-left: 3px solid #fff;
+}
+
+.profile-content {
+    width: -webkit-fill-available;
+    height: 100vh;
+    background: #fff;
+    border-top-left-radius: 30px;
+    color: #000;
+}
+
+.profile-content .product-img-container {
+    width: 120px;
+}
+
+.profile-user {}
