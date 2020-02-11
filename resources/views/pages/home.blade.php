@@ -29,22 +29,22 @@
     <hr class="mt-3 mb-4 hr-xhsdbz">
     <h3 class="title-content h3-xhsdbz">Paling Banyak Dicari</h3>
     <div class="product-container d-flex">
-        <a class="product p-1 text-center c-pointer">
+        <a class="product p-1 text-center c-pointer" href="/id_lelang">
             <div class="product-img background-setup" style="background: url(assets/img/product/jbl.png)"></div>
             <h3 class="mb-1">JBL flip 6 - 2019</h3>
             <h4 class="mt-1 text-thin">Start Bidding IDR 200.000</h4>
         </a>
-        <a class="product p-1 text-center c-pointer">
+        <a class="product p-1 text-center c-pointer" href="/id_lelang">
             <div class="product-img background-setup" style="background: url(assets/img/product/jbl.png)"></div>
             <h3 class="mb-1">JBL flip 6 - 2019</h3>
             <h4 class="mt-1 text-thin">Start Bidding IDR 200.000</h4>
         </a>
-        <a class="product p-1 text-center c-pointer">
+        <a class="product p-1 text-center c-pointer" href="/id_lelang">
             <div class="product-img background-setup" style="background: url(assets/img/product/jbl.png)"></div>
             <h3 class="mb-1">JBL flip 6 - 2019</h3>
             <h4 class="mt-1 text-thin">Start Bidding IDR 200.000</h4>
         </a>
-        <a class="product p-1 text-center c-pointer">
+        <a class="product p-1 text-center c-pointer" href="/id_lelang">
             <div class="product-img background-setup" style="background: url(assets/img/product/jbl.png)"></div>
             <h3 class="mb-1">JBL flip 6 - 2019</h3>
             <h4 class="mt-1 text-thin">Start Bidding IDR 200.000</h4>

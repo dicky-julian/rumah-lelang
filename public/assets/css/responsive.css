@@ -15,6 +15,14 @@
         font-size: 15px;
         line-height: 25px;
     }
+    /* auth */
+    .auth-form {
+        width: 100%;
+    }
+
+    .auth-banner {
+        display: none;
+    }
 }
 
 @media screen and (max-width: 800px) {
@@ -82,6 +90,23 @@
     #product-detail .product-img {
         position: static;
     }
+    /* profile user */
+    #profile-user {
+        display: block;
+    }
+    #profile-user #profile-sidebar {
+        width: 80%;
+        min-height: fit-content;
+        padding: 1.5em 10%;
+        position: relative;
+    }
+    #profile-user #profile-sidebar .profile button {
+        width: fit-content;
+        display: inline-flex;
+    }
+    #profile-user #profile-sidebar .link-bar {
+        display: flex;
+    }
 }
 
 @media screen and (max-width: 600px) {
@@ -98,5 +123,18 @@
     .product-list .product-img {
         width: 85px;
         height: 85px;
+    }
+    .auth-form form {
+        width: 80%;
+    }
+    .auth-form form p {
+        font-size: 13px;
+    }
+    .auth-form form img {
+        width: 25px;
+        height: 25px;
+    }
+    .auth-form form h1 {
+        font-size: 25px;
     }
 }

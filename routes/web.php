@@ -14,3 +14,6 @@
 Route::get('/','Pages\IndexController@home');
 Route::get('/id_lelang','Pages\Lelang\detailLelangController@get');
 Route::get('/id_user','Pages\IndexController@UserDetail');
+
+// auth
+Route::get('/in', 'Auth\AuthController@login');

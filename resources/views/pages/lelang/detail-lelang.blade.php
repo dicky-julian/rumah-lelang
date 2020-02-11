@@ -26,7 +26,7 @@
             <div class="show-div-bid">
 
             </div>
-            <button class="bt bt-primary fullwidth mt-2 c-pointer" style="transition: .1s" onclick="showBidBar(this)"><h3 class="m-0">Bid</h3></button>
+            <button class="bt bt-primary fullwidth mt-2 mb-5 c-pointer" style="transition: .1s" onclick="showBidBar(this)"><h3 class="m-0">Bid</h3></button>
         </div>
     </div>
 </div>

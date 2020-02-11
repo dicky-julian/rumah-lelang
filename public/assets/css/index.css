@@ -8,6 +8,91 @@
     src: url("../font/NeueEinstellungBold.ttf")
 }
 
+/* modal */
+.modal {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    position: fixed;
+    z-index: 99;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal .fade {
+    width: 100%;
+    height: 100%;
+    transition: opacity .15s linear;
+    background: #000;
+    opacity: 0.5;
+    position: fixed;
+    z-index: -1;
+}
+
+.modal .modal-card {
+    background: #fff;
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 4px 6px -1px;
+    z-index: 1;
+}
+
+.modal-post-lelang {
+    width: 750px;
+}
+
+.modal-nav {
+    width: 100%;
+    border-bottom: 1px solid rgba(0,0,0,.1);
+    padding: 0 5%;
+}
+
+.modal-nav label {
+    padding: 1.5em 0 1.25em;
+    border-bottom: 2px solid #00edaa;
+}
+
+.modal-content {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    padding: 2em 5%;
+}
+
+.modal-content input, .modal-content textarea {
+    height: fit-content;
+    border: 1px solid rgba(0,0,0,.1);
+    border-radius: 5px;
+    margin: 3px;
+    color: #00edaa;
+}
+
+.modal-content input::placeholder, .modal-content textarea::placeholder {
+    color: rgba(0, 0, 0, 0.425);
+}
+
+.modal-content input:focus, .modal-content textarea:focus {
+    border-color: #00edaa;
+    outline: 0;
+}
+
+.modal-content .input-file {
+    margin: 5px;
+    padding: 1em;
+    background: #00edaa;
+    color: #fff;
+    border-radius: 5px;
+    font-size: 13px;
+}
+
+.modal-content .input-time input {
+    width: 25%;
+}
+
+.modal .button-group {
+    display: flex;
+    padding: 2em 5%;
+}
+
 /* Navbar */
 #index-navbar {
     position: fixed;
@@ -31,6 +116,23 @@
 
 #nav-tool .i-search {
     height: 25px;
+}
+
+.show-modal-tools {
+    min-width: 8em;
+    position: fixed;
+    top: 4.5em;
+    right: 2em;
+    padding: 2.5em 1.25em;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.07) 0 2px 6px 1px;
+    z-index: 1;
+}
+
+.show-modal-tools a:hover {
+    color: #00edaa;
+    transition: .1s !important;
 }
 
 /* thing list */
@@ -167,51 +269,115 @@
 /* user profile */
 
 #profile-user {
-    background: #1edca9;
-    color: #fff;
-}
-#profile-user #profile-navbar {
-    padding: 15px 5% 0;
+    display: flex;
 }
 
-.profile-sidebar {
+#profile-sidebar {
+    width: 18em;
+    min-height: 100vh;
+    padding: 1.5em 2.5em;
+    background: #f4f7f4;
     position: sticky;
-    top: 2em;
-    width: 15em;
-    padding: 0 2em;
+    top: 0;
+    height: fit-content;
 }
 
-.profile-sidebar img {
-    width: 125px;
-    height: 125px;
+#profile-sidebar .profile .img-profile {
+    width: 5em;
     border-radius: 10px;
 }
 
-.profile-sidebar .bar-link .bt {
-    margin-top: 1em;
-    padding: 15px 0;
-    background: #43eebf87;
-    font-size: 14px;
+#profile-sidebar .profile .bt {
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 4px 6px -1px;
 }
 
-.profile-sidebar .bar-link .bt:hover {
-    background: #86ffdd87;
+#profile-sidebar .link-bar .link {
+    padding: 13px 15px;
+    background: transparent;
+    border: 0;
+    border-radius: 25px;
 }
 
-.profile-sidebar .bar-link .active {
-    border-left: 3px solid #fff;
-}
-
-.profile-content {
-    width: -webkit-fill-available;
-    height: 100vh;
+#profile-sidebar .link-bar .active {
     background: #fff;
-    border-top-left-radius: 30px;
-    color: #000;
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 4px 6px -1px;
 }
 
-.profile-content .product-img-container {
-    width: 120px;
+#profile-content {
+    padding: 3em;
 }
 
-.profile-user {}
+#profile-content h1 {
+    font-size: 40px;
+}
+
+.profile-show-history {
+
+}
+
+.show-barang-terjual .product, .show-barang-terbeli .product {
+    border: 1px solid #f2f4f4;
+    border-radius: 10px;
+}
+
+.show-barang-terjual .product:hover , .show-barang-terbeli .product:hover {
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 4px 6px -1px;
+}
+
+.show-barang-terjual .product .product-img-container, .show-barang-terbeli .product .product-img-container {
+    width: 130px;
+}
+
+.show-barang-terjual .product .product-img, .show-barang-terbeli .product .product-img {
+    width: 80px;
+    height: 80px;
+}
+
+.profile-show-profile form {
+    width: 80%;
+}
+
+.profile-show-profile input, .profile-show-profile .upload-file {
+    width: 100%;
+    font-size: 13px;
+}
+
+.profile-show-profile .upload-file {
+    width: calc(100% + 2.5em) !important;
+}
+
+.profile-show-profile .upload-file .input-cst {
+    width: 90%;
+    padding-left: 2.5em;
+}
+
+.profile-show-profile .upload-file .bt {
+    width: 15%;
+    padding: 1.25em;
+}
+
+/* Auth */
+.auth-form {
+    width: 45%;
+    min-height: 100vh;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.auth-form h1 {
+    font-family: berlin;
+    font-size: 40px;
+}
+
+.auth-form form {
+    width: 24em;
+}
+
+.auth-form form button {
+    padding: 1em;
+}
+
+.auth-banner {
+    width: 55%;
+    background: url("../img/index/login.jpg");
+}

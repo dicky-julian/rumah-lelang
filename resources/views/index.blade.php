@@ -20,11 +20,86 @@
         </div>
 
         <div id="nav-tool" class="d-flex float-right">
-            <img src="assets/img/index/icon/search.png" alt="" class="i-search mr-2 align-s-center c-pointer">
-            <button class="bt bt-primary mr-2 c-pointer">Masuk</button>
-            <img class="profile c-pointer" src="assets/img/index/profile.png" alt="">
+            <form action="" class="d-flex">
+                <input type="text" class="input-search mr-2 pl-2" style="border-radius: 5px; border: 1px solid #000; display: none" placeholder="find your thing">
+            </form>
+            <img src="assets/img/index/icon/search.png" alt="" class="i-search mr-2 align-s-center c-pointer" onclick="showSearchBar()">
+            <a href="/in"><button class="bt bt-primary mr-2 c-pointer">Masuk</button></a>
+            <div id="profile-picture">
+                <img class="profile c-pointer" src="assets/img/index/profile.png" alt="">
+                <div class="show-modal-tools" style="display: none">
+                    <a href="/id_user" class="mb-2 d-block">Profil</a>
+                    <a class="mb-2 d-block c-pointer" onclick="showLelangModal()">Buat Lelang</a>
+                    <hr>
+                    <a href="" class="mt-2 d-block">Keluar</a>
+                </div>
+            </div>
         </div>
     </nav>
+    <script>
+        $(function() {
+            var status = '';
+            $('#profile-picture').on("click", function() {
+                if (status == '' || status == 0) {
+                    $('.show-modal-tools').show();
+                    status = 1;
+                } else if (status == 1) {
+                    $('.show-modal-tools').hide();
+                    status = 0;
+                }
+            }
+            );
+        });
+
+        function showSearchBar() {
+            $(".input-search").fadeToggle(400);
+        }
+
+        function showLelangModal() {
+            $('.modal').show();
+            $('.modal').find('.modal-card').fadeIn(400);
+        }
+        
+    </script>
+    <div class="modal" style="display: none">
+        <div class="fade"></div>
+        <div class="modal-card modal-post-lelang h-fit-content" style="display: none">
+            <div class="modal-nav d-flex">
+                <label for="">Tambah Lelang</label>
+            </div>
+            <form action="">
+                <div class="modal-content">
+                    <input type="text" class="input-box" placeholder="Nama barang">
+                    <input type="text" class="input-box" placeholder="Harga Barang">
+                    <textarea class="input-box" placeholder="Deskripsi Barang" style="height: auto; grid-row: 2 / span 2"></textarea>
+                    <input type="text" class="input-box" placeholder="Harga Barang">
+                    <div class="input-time">
+                        <label class="d-block" style="font-size: 13px; margin: 8px 5px 5px">Durasi Lelang</label>
+                        <div class="d-flex j-space-beetween">
+                            <input type="text" class="input-box" placeholder="hari">
+                            <input type="text" class="input-box" placeholder="jam">
+                            <input type="text" class="input-box" placeholder="detik">
+                        </div>
+                    </div>
+                    <input type="file" name="file" id="file" class="inputfile"/>
+                    <div class="d-flex mt-2">
+                        <label for="file" class="input-file c-pointer text-center w-fit-content">Pilih foto barang</label>
+                        <div class="d-flex ml-2 align-i-center" style="font-size: 15px">3 foto terpilih</div>
+                    </div>
+                </div>
+                
+
+                <div class="button-group d-flex">
+                    <button type="button" class="bt bt-primary c-pointer" onclick="closeModal()">Kembali</button>
+                    <button type="button" class="bt bt-primary c-pointer ml-1" style="width: 150px">Hapus semua</button>
+                    <div class="w-webkit-fill">
+                        <button class="bt bt-primary-reverse c-pointer float-right" type="submit">Buat Lelang</button>
+                    </div>
+                    
+                </div>
+            </form>
+        </div>
+    </div>
     @yield('body')
 </body>
 </html>

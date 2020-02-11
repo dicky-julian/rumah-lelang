@@ -27,7 +27,7 @@ function showBidBar(button) {
     '<button class="bt bt-primary-reverse mr-2 c-pointer mt-1">Submit Bidding</button>'+
     '<div class="hr-attribute d-flex fullwidth j-space-beetween mt-2 mb-2"><hr>or<hr></div>'+
     '</form>'+
-    '<button class="bt bt-primary-reverse mr-2 c-pointer mt-1 fullwidth">Buy Now</button>'
+    '<button class="bt bt-primary-reverse mr-2 c-pointer mt-1 mb-5 fullwidth">Buy for Rp. 200.000</button>'
 
     if(status == 0) {
         $(button).fadeOut(500).remove();
@@ -41,34 +41,59 @@ function showChangeImg(attr, image) {
     $(attr).addClass('active');
 }
 
-function historiLelang(attr, status) {
-    $('.a').removeClass('a');
-    $(attr).addClass('a');
+function showProfile() {
+    $('.active').removeClass('active');
+    $('.profile-show-profile').fadeIn(500);
+    $('.profile-show-history').hide();
+    $('.profile-show-lelang').hide();
+}
 
-    if (status == 'terbeli') {
-        $('.show-barang-terjual').hide();
-        $('.show-barang-terbeli').fadeIn(500);
-    } else if (status == 'terjual') {
-        $('.show-barang-terbeli').hide();
-        $('.show-barang-terjual').fadeIn(500);
+function profileBar(attr, status) {
+    $('.active').removeClass('active');
+    $(attr).addClass('active');
+    $('.profile-show-profile').hide();
+
+    if (status == 'histori') {
+        $('.profile-show-history').fadeIn(500);
+        $('.profile-show-lelang').hide();
+        $('.profile-show-profile').hide();
+    } else if (status == 'lelang') {
+        $('.profile-show-history').hide();
+        $('.profile-show-lelang').fadeIn(500);
     }
 }
 
-function barLink(attr, status) {
-    $('.active').removeClass('active');
-    $(attr).addClass('active');
+function showHistori(attr, status) {
+    $('.a-active').removeClass('a-active');
+    $(attr).addClass('a-active');
+    $('.profile-show-profile').hide();
 
-    if (status == 'profile') {
-        $('.profile-user').fadeIn(500);
-        $('.histori-lelang').hide();
-        $('.proses-lelang').hide();
-    } else if (status == 'histori') {
-        $('.profile-user').hide();
-        $('.histori-lelang').fadeIn(500);
-        $('.proses-lelang').hide();
-    } else if (status == 'proses') {
-        $('.profile-user').hide();
-        $('.histori-lelang').hide();
-        $('.proses-lelang').fadeIn(500);
+    if (status == 'terjual') {
+        $('.show-barang-terbeli').hide();
+        $('.show-barang-terjual').fadeIn(500);
+    } else if (status == 'terbeli') {
+        $('.show-barang-terbeli').fadeIn(500);
+        $('.show-barang-terjual').hide();
     }
+}
+
+function auth(status) {
+    $('.auth-form').hide().fadeIn(400);
+    if (status == 'signup') {
+        $('input[type=email]').fadeIn(400);
+        $('button[type=submit').html('DAFTAR');
+        $('button[type=button').html('MASUK');
+        $('button[type=button').attr('onclick','auth("login")');
+        $('.attr-added').find('p').html('sudah terdaftar?').fadeIn(400);
+    } else if (status == 'login') {
+        $('input[type=email]').hide();
+        $('button[type=submit').html('MASUK');
+        $('button[type=button').html('DAFTAR BARU');
+        $('button[type=button').attr('onclick','auth("signup")');
+        $('.attr-added').find('p').html('atau buat akun baru').fadeIn(400);
+    }
+}
+
+function closeModal() {
+    $('.modal').fadeOut(400).hide();
 }
