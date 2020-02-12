@@ -36,6 +36,70 @@
             </div>
         </div>
     </nav>
+    {{-- modal --}}
+    <div class="modal" style="display: none">
+        <div class="fade"></div>
+        <div class="modal-card modal-post-lelang h-fit-content" style="display: none">
+            <div class="modal-nav d-flex">
+                <label for="">Tambah Lelang</label>
+            </div>
+            <form action="" autocomplete="off">
+                <div class="modal-content">
+                    {{-- nama barang --}}
+                    <input type="text" class="input-box" placeholder="Nama barang">
+
+                    {{-- kategori --}}
+                    <input list="select-kategori" name="kategori" class="input-box c-pointer" placeholder="Kategori">
+                    <datalist id="select-kategori">
+                        <option value="Internet Explorer">
+                        <option value="Firefox">
+                        <option value="Chrome">
+                        <option value="Opera">
+                        <option value="Safari">
+                    </datalist>
+
+                    {{-- deskripsi barang --}}
+                    <textarea class="input-box" placeholder="Deskripsi Barang" style="height: auto; grid-row: 2 / span 2"></textarea>
+
+                    {{-- harga --}}
+                    <div class="input-time">
+                        <label class="d-block" style="font-size: 13px; margin: 8px 5px 5px">Harga Barang</label>
+                        <div class="d-flex j-space-beetween">
+                            <input type="text" class="input-box" placeholder="start">
+                            <input type="text" class="input-box" placeholder="min">
+                            <input type="text" class="input-box" placeholder="buy now">
+                        </div>
+                    </div>
+
+                    {{-- timer --}}
+                    <div class="input-time">
+                        <label class="d-block" style="font-size: 13px; margin: 8px 5px 5px">Durasi Lelang</label>
+                        <div class="d-flex j-space-beetween">
+                            <input type="text" class="input-box" placeholder="hari">
+                            <input type="text" class="input-box" placeholder="jam">
+                            <input type="text" class="input-box" placeholder="detik">
+                        </div>
+                    </div>
+                    <input type="file" name="file" id="file" class="inputfile"/>
+                    <div class="d-flex mt-2">
+                        <label for="file" class="input-file c-pointer text-center w-fit-content">Pilih foto barang</label>
+                        <div class="d-flex ml-2 align-i-center" style="font-size: 15px">3 foto terpilih</div>
+                    </div>
+                </div>
+                
+
+                <div class="button-group d-flex">
+                    <button type="button" class="bt bt-primary c-pointer" onclick="closeModal()">Kembali</button>
+                    <button type="button" class="bt bt-primary c-pointer ml-1 d-a" style="width: 150px">Hapus semua</button>
+                    <div class="w-webkit-fill">
+                        <button class="bt bt-primary-reverse c-pointer float-right" type="submit">Buat Lelang</button>
+                    </div>
+                    
+                </div>
+            </form>
+        </div>
+    </div>
+    {{-- script --}}
     <script>
         $(function() {
             var status = '';
@@ -61,45 +125,6 @@
         }
         
     </script>
-    <div class="modal" style="display: none">
-        <div class="fade"></div>
-        <div class="modal-card modal-post-lelang h-fit-content" style="display: none">
-            <div class="modal-nav d-flex">
-                <label for="">Tambah Lelang</label>
-            </div>
-            <form action="">
-                <div class="modal-content">
-                    <input type="text" class="input-box" placeholder="Nama barang">
-                    <input type="text" class="input-box" placeholder="Harga Barang">
-                    <textarea class="input-box" placeholder="Deskripsi Barang" style="height: auto; grid-row: 2 / span 2"></textarea>
-                    <input type="text" class="input-box" placeholder="Harga Barang">
-                    <div class="input-time">
-                        <label class="d-block" style="font-size: 13px; margin: 8px 5px 5px">Durasi Lelang</label>
-                        <div class="d-flex j-space-beetween">
-                            <input type="text" class="input-box" placeholder="hari">
-                            <input type="text" class="input-box" placeholder="jam">
-                            <input type="text" class="input-box" placeholder="detik">
-                        </div>
-                    </div>
-                    <input type="file" name="file" id="file" class="inputfile"/>
-                    <div class="d-flex mt-2">
-                        <label for="file" class="input-file c-pointer text-center w-fit-content">Pilih foto barang</label>
-                        <div class="d-flex ml-2 align-i-center" style="font-size: 15px">3 foto terpilih</div>
-                    </div>
-                </div>
-                
-
-                <div class="button-group d-flex">
-                    <button type="button" class="bt bt-primary c-pointer" onclick="closeModal()">Kembali</button>
-                    <button type="button" class="bt bt-primary c-pointer ml-1" style="width: 150px">Hapus semua</button>
-                    <div class="w-webkit-fill">
-                        <button class="bt bt-primary-reverse c-pointer float-right" type="submit">Buat Lelang</button>
-                    </div>
-                    
-                </div>
-            </form>
-        </div>
-    </div>
     @yield('body')
 </body>
 </html>

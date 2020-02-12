@@ -2,6 +2,7 @@
 
 @section('body')
 <div id="app">
+    {{-- show category --}}
     <div id="type-thing" class="text-center mt-3">
         <div class="d-i-block">
             <a href="/" class="p-2 type-active">All</a>
@@ -26,6 +27,7 @@
         </div>
     </div>
 
+    {{-- show barang order by paling banyak ditawar --}}
     <hr class="mt-3 mb-4 hr-xhsdbz">
     <h3 class="title-content h3-xhsdbz">Paling Banyak Dicari</h3>
     <div class="product-container d-flex">
@@ -51,7 +53,7 @@
         </a>
     </div>
 
-    
+    {{-- show barang paling banyak dicari - berdasarkan pencarian terbanyak --}}
     <div class="d-flex container-flex">
         <div class="product-list">
         <h3 class="title-content mt-5">Mungkin Anda Butuhkan</h3>
@@ -116,6 +118,7 @@
                     <div class="product-img background-setup float-right" style="background: url(assets/img/product/jbl.png)"></div>
                 </div>
             </div>
+            {{-- jika on click akan merubah query limit menjadi lebih banyak --}}
             <button class="bt-medium fullwidth bt-primary c-pointer mb-4">Lihat Lebih Banyak</button>
         </div>
 

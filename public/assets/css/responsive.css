@@ -107,6 +107,26 @@
     #profile-user #profile-sidebar .link-bar {
         display: flex;
     }
+    .modal-content {
+        display: block;
+    }
+    .modal-content .input-box {
+        width: -webkit-fill-available;
+        padding: 1.5em;
+    }
+    .modal-content .input-time .input-box {
+        padding: 1em 1.25em;
+    }
+    .modal-content .input-time label {
+        margin: 1em 5px 5px;
+    }
+    .button-group .d-a {
+        width: 275px !important;
+        margin-left: 3px;
+    }
+    .modal-post-lelang {
+        width: 95%;
+    }
 }
 
 @media screen and (max-width: 600px) {

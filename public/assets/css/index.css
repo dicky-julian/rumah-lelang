@@ -58,7 +58,7 @@
     padding: 2em 5%;
 }
 
-.modal-content input, .modal-content textarea {
+.modal-content input, .modal-content textarea, .modal-content select {
     height: fit-content;
     border: 1px solid rgba(0,0,0,.1);
     border-radius: 5px;
@@ -66,13 +66,17 @@
     color: #00edaa;
 }
 
-.modal-content input::placeholder, .modal-content textarea::placeholder {
+.modal-content input::placeholder, .modal-content textarea::placeholder, .modal-content select {
     color: rgba(0, 0, 0, 0.425);
 }
 
-.modal-content input:focus, .modal-content textarea:focus {
+.modal-content input:focus, .modal-content textarea:focus, .modal-content select:focus {
     border-color: #00edaa;
     outline: 0;
+}
+
+.modal-content select option a {
+    padding: 10px 0;
 }
 
 .modal-content .input-file {
