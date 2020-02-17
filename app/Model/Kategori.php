@@ -4,7 +4,7 @@ namespace App\Model;
 
 use Illuminate\Database\Eloquent\Model;
 
-class User extends Model
+class Kategori extends Model
 {
-    protected $table = 'tb_user';
+    protected $table = 'tb_kategori_lelang';
 }

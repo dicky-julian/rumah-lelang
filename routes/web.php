@@ -12,8 +12,15 @@
 */
 
 Route::get('/','Pages\IndexController@home');
-Route::get('/id_lelang','Pages\Lelang\detailLelangController@get');
-Route::get('/id_user','Pages\IndexController@UserDetail');
+Route::get('/user/{id_user}','Pages\IndexController@UserDetail');
+Route::post('/updateProfile/{id_user}','Pages\IndexController@updateProfile');
 
 // auth
-Route::get('/in', 'Auth\AuthController@login');
+Route::match(['get','post'],'/in','Auth\AuthController@in');
+
+// lelang
+Route::post('/tambah_lelang','Pages\lelangController@tambah_lelang');
+Route::get('/lelang/{id_lelang}','Pages\lelangController@showlelang');
+Route::match(['get','post'],'/take_lelang/{id_lelang}','Pages\lelangController@ikut_lelang');
+Route::post('/changeStatus','Pages\lelangController@changeStatus');
+Route::get('/getLelangByKategori/{kategori}','Pages\lelangController@getLelangByKategori');

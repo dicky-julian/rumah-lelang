@@ -14,16 +14,27 @@
 </head>
 <body id="in" class="d-flex">
     <div class="auth-form d-flex">
-        <form action="">
+        <form action="/in" method="post">
+            {{ csrf_field() }}
             <h1 class="d-flex text-thin align-i-center mt-0 mb-5"><img src="assets/img/index/logo.png" alt="" class="mr-1" width="35" height="35"> rumahlelang</h1>
+            @if(\Session::has('alert-fail'))
+                <div class="alert alert-danger mb-2">
+                    <img src="assets/img/index/icon/danger.png" alt="">{{Session::get('alert-fail')}}
+                </div>
+            @endif
+            @if(\Session::has('alert-success'))
+                <div class="alert alert-success mb-2">
+                    <img src="assets/img/index/icon/success.png" alt="">{{Session::get('alert-success')}}
+                </div>
+            @endif
             {{-- username --}}
-            <input type="text" class="in-input" placeholder="Username or Email">
+            <input name="username" type="text" class="in-input" placeholder="Username" style="display: none">
             {{-- email --}}
-            <input type="email" class="in-input mt-2" placeholder="Email Address" style="display: none">
+            <input name="email" type="email" class="in-input mt-2" placeholder="Email Address" required>
             {{-- password --}}
-            <input type="password" class="in-input mt-2" placeholder="Your Password">
+            <input name="password" type="password" class="in-input mt-2" placeholder="Your Password" required>
 
-            <button type="submit" class="bt bt-primary-reverse fullwidth mt-2 c-pointer">MASUK</button>
+            <button type="submit" class="bt bt-primary-reverse fullwidth mt-2 c-pointer" name="submit_login">MASUK</button>
             <div class="d-flex j-space-beetween mt-5 mb-5 attr-added">
                 <hr style="width: 25%"><p class="m-1">atau buat akun baru</p><hr style="width: 25%">
             </div>

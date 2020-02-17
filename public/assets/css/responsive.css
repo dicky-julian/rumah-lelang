@@ -134,6 +134,9 @@
         width: 90px;
         height: 90px;
     }
+    .show-empty-data img {
+        width: 250px;
+    }
 }
 
 @media screen and (max-width: 500px) {

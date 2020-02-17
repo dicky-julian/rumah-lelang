@@ -7,50 +7,26 @@
         <div class="d-i-block">
             <a href="/" class="p-2 type-active">All</a>
         </div>
+        @foreach ($kategori as $k)
         <div class="d-i-block">
-            <a href="#?type=bangunan" class="p-2" onclick="typeActivate(this)">Bangunan</a>
+            <a class="p-2 c-pointer" onclick="typeActivate(this)">{{$k['kategori']}}</a>
         </div>
-        <div class="d-i-block">
-            <a href="#?type=mesin" class="p-2" onclick="typeActivate(this)">Mesin</a>
-        </div>
-        <div class="d-i-block">
-            <a href="#?type=perhiasan" class="p-2" onclick="typeActivate(this)">Perhiasan</a>
-        </div>
-        <div class="d-i-block">
-            <a href="#?type=koleksi" class="p-2" onclick="typeActivate(this)">Koleksi</a>
-        </div>
-        <div class="d-i-block">
-            <a href="#?type=kawat" class="p-2" onclick="typeActivate(this)">Kawat</a>
-        </div>
-        <div class="d-i-block">
-            <a href="#?type=balung" class="p-2" onclick="typeActivate(this)">Balung</a>
-        </div>
+        @endforeach
     </div>
 
     {{-- show barang order by paling banyak ditawar --}}
     <hr class="mt-3 mb-4 hr-xhsdbz">
-    <h3 class="title-content h3-xhsdbz">Paling Banyak Dicari</h3>
+    <h3 class="title-content h3-xhsdbz">Pelelangan Terbaru</h3>
     <div class="product-container d-flex">
-        <a class="product p-1 text-center c-pointer" href="/id_lelang">
-            <div class="product-img background-setup" style="background: url(assets/img/product/jbl.png)"></div>
-            <h3 class="mb-1">JBL flip 6 - 2019</h3>
-            <h4 class="mt-1 text-thin">Start Bidding IDR 200.000</h4>
+        @if(count($data) > 3)
+        @for($i=0; $i<4; $i++)
+        <a class="product p-1 text-center c-pointer" href="/lelang/{{$data[$i]['id']}}">
+            <div class="product-img background-setup" style="background: url(assets/img/product/{{str_replace(' ', '', $data[$i]['nama_lelang'])}}/{{$data_foto[$i]}})"></div>
+            <h3 class="mb-1">{{$data[$i]['nama_lelang']}}</h3>
+            <h4 class="mt-1 text-thin">Start Bidding Rp.{{$data[$i]['start_bid']}}</h4>
         </a>
-        <a class="product p-1 text-center c-pointer" href="/id_lelang">
-            <div class="product-img background-setup" style="background: url(assets/img/product/jbl.png)"></div>
-            <h3 class="mb-1">JBL flip 6 - 2019</h3>
-            <h4 class="mt-1 text-thin">Start Bidding IDR 200.000</h4>
-        </a>
-        <a class="product p-1 text-center c-pointer" href="/id_lelang">
-            <div class="product-img background-setup" style="background: url(assets/img/product/jbl.png)"></div>
-            <h3 class="mb-1">JBL flip 6 - 2019</h3>
-            <h4 class="mt-1 text-thin">Start Bidding IDR 200.000</h4>
-        </a>
-        <a class="product p-1 text-center c-pointer" href="/id_lelang">
-            <div class="product-img background-setup" style="background: url(assets/img/product/jbl.png)"></div>
-            <h3 class="mb-1">JBL flip 6 - 2019</h3>
-            <h4 class="mt-1 text-thin">Start Bidding IDR 200.000</h4>
-        </a>
+        @endfor
+        @endif
     </div>
 
     {{-- show barang paling banyak dicari - berdasarkan pencarian terbanyak --}}
@@ -58,65 +34,19 @@
         <div class="product-list">
         <h3 class="title-content mt-5">Mungkin Anda Butuhkan</h3>
         <hr>
-        <div class="product d-flex mb-4">
-                <a class="product-info" href="">
-                    <h3 class="mt-1 mb-1">JBL BT565BTNC - Headphone over-ear dengan noise cacelling</h3>
-                    <h4 class="mt-1 mb-1 text-thin">Start Bidding IDR 200.000</h4>
-                    <h4 class="color-pale text-thin mt-1">Jakarta Raya</h4>
-                </a>
-                <div class="product-img-container">
-                    <div class="product-img background-setup float-right" style="background: url(assets/img/product/jbl.png)"></div>
+            <div id="show-lelang">
+                @for($i=0; $i<count($data); $i++)
+                <div class="product d-flex mb-4">
+                    <a class="product-info" href="/lelang/{{$data[$i]['id']}}">
+                        <h3 class="mt-1 mb-1">{{$data[$i]['nama_lelang']}}</h3>
+                        <h4 class="mt-1 mb-1 text-thin">Start Bidding Rp.{{$data[$i]['start_bid']}}</h4>
+                        <h4 class="color-pale text-thin mt-1">Jakarta Raya</h4>
+                    </a>
+                    <div class="product-img-container">
+                        <div class="product-img background-setup float-right" style="background: url(assets/img/product/{{str_replace(' ', '', $data[$i]['nama_lelang'])}}/{{$data_foto[$i]}})"></div>
+                    </div>
                 </div>
-            </div>
-            <div class="product d-flex mb-4">
-                <a class="product-info" href="">
-                    <h3 class="mt-1 mb-1">JBL BT565BTNC - Headphone over-ear dengan noise cacelling</h3>
-                    <h4 class="mt-1 mb-1 text-thin">Start Bidding IDR 200.000</h4>
-                    <h4 class="color-pale text-thin mt-1">Jakarta Raya</h4>
-                </a>
-                <div class="product-img-container">
-                    <div class="product-img background-setup float-right" style="background: url(assets/img/product/jbl.png)"></div>
-                </div>
-            </div>
-            <div class="product d-flex mb-4">
-                <a class="product-info" href="">
-                    <h3 class="mt-1 mb-1">JBL BT565BTNC - Headphone over-ear dengan noise cacelling</h3>
-                    <h4 class="mt-1 mb-1 text-thin">Start Bidding IDR 200.000</h4>
-                    <h4 class="color-pale text-thin mt-1">Jakarta Raya</h4>
-                </a>
-                <div class="product-img-container">
-                    <div class="product-img background-setup float-right" style="background: url(assets/img/product/jbl.png)"></div>
-                </div>
-            </div>
-            <div class="product d-flex mb-4">
-                <a class="product-info" href="">
-                    <h3 class="mt-1 mb-1">JBL BT565BTNC - Headphone over-ear dengan noise cacelling</h3>
-                    <h4 class="mt-1 mb-1 text-thin">Start Bidding IDR 200.000</h4>
-                    <h4 class="color-pale text-thin mt-1">Jakarta Raya</h4>
-                </a>
-                <div class="product-img-container">
-                    <div class="product-img background-setup float-right" style="background: url(assets/img/product/jbl.png)"></div>
-                </div>
-            </div>
-            <div class="product d-flex mb-4">
-                <a class="product-info" href="">
-                    <h3 class="mt-1 mb-1">JBL BT565BTNC - Headphone over-ear dengan noise cacelling</h3>
-                    <h4 class="mt-1 mb-1 text-thin">Start Bidding IDR 200.000</h4>
-                    <h4 class="color-pale text-thin mt-1">Jakarta Raya</h4>
-                </a>
-                <div class="product-img-container">
-                    <div class="product-img background-setup float-right" style="background: url(assets/img/product/jbl.png)"></div>
-                </div>
-            </div>
-            <div class="product d-flex mb-4">
-                <a class="product-info" href="">
-                    <h3 class="mt-1 mb-1">JBL BT565BTNC - Headphone over-ear dengan noise cacelling</h3>
-                    <h4 class="mt-1 mb-1 text-thin">Start Bidding IDR 200.000</h4>
-                    <h4 class="color-pale text-thin mt-1">Jakarta Raya</h4>
-                </a>
-                <div class="product-img-container">
-                    <div class="product-img background-setup float-right" style="background: url(assets/img/product/jbl.png)"></div>
-                </div>
+                @endfor
             </div>
             {{-- jika on click akan merubah query limit menjadi lebih banyak --}}
             <button class="bt-medium fullwidth bt-primary c-pointer mb-4">Lihat Lebih Banyak</button>
@@ -165,9 +95,6 @@
                 </div>
             </div>
         </div>
-
     </div>
-    
-
 </div>
 @endsection
